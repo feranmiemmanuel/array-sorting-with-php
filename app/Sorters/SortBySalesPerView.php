@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class SortBySalesPerView implements ProductSortInterface
 {
-   public function sort($products, $order)
+   public function sort(array $products, string $order): array
    {
         foreach ($products as &$product) {
             $product['sales_per_view_ratio'] = ($product['views_count'] != 0) ? $product['sales_count'] / $product['views_count'] : 0;

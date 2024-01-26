@@ -3,8 +3,6 @@
 namespace App\Catalog;
 
 use App\Sorters\ProductSortInterface;
-
-
 class Catalog
 {
     private $products;
@@ -14,7 +12,7 @@ class Catalog
         $this->products = $products;
     }
 
-    public function getProducts(ProductSortInterface $sorter, $order)
+    public function getProducts(ProductSortInterface $sorter, string $order): array
     {
         return $sorter->sort($this->products, $order);
     }

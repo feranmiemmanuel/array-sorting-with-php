@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 class SortByPrice implements ProductSortInterface
 {
-   public function sort($products, $order)
+   public function sort(array $products, string $order): array
    {
         usort($products, function ($firstValue, $secondValue) use ($order) {
             $result = $firstValue['price'] <=> $secondValue['price'];

@@ -4,5 +4,5 @@ namespace App\Sorters;
 
 interface ProductSortInterface
 {
-    public function sort($products, $order);
+    public function sort(array $products, string $order): array;
 }
